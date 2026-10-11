@@ -22,8 +22,6 @@ Floating WebView overlay untuk Android.
 
 Setiap push ke `main` akan trigger GitHub Actions untuk build APK.
 
-Download APK di tab **Actions** → pilih workflow → **Artifacts**.
-
 ## 🛠️ Build Lokal
 
 ```bash
