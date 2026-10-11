@@ -1,10 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="bg">#050B14</color>
-    <color name="panel">#0B1726</color>
-    <color name="panel2">#10243A</color>
-    <color name="line">#1B5B91</color>
-    <color name="text">#F2F7FC</color>
-    <color name="muted">#91A8BF</color>
-    <color name="accent">#18D8FF</color>
-    <color name="accent2">#168BFF</color>
+    <color name="orange">#FF6700</color>
+    <color name="white">#FFFFFF</color>
 </resources>

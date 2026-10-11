@@ -1,44 +1,35 @@
-plugins { id 'com.android.application' }
+apply plugin: 'com.android.application'
 
 android {
-    namespace 'com.dbzbanten.adpinger'
-    compileSdk 35
+    namespace 'com.dbzbanten.floatweb'
+    compileSdk 34
 
     defaultConfig {
-        applicationId 'com.dbzbanten.adpinger'
-        minSdk 23
-        targetSdk 35
+        applicationId "com.dbzbanten.floatweb"
+        minSdk 21
+        targetSdk 34
         versionCode 1
-        versionName '1.0'
-    }
-
-    signingConfigs {
-        release {
-            def keystoreFile = System.getenv("KEYSTORE_FILE")
-
-            if (keystoreFile != null && !keystoreFile.isEmpty()) {
-                storeFile file(keystoreFile)
-                storePassword System.getenv("KEYSTORE_PASSWORD")
-                keyAlias System.getenv("KEY_ALIAS")
-                keyPassword System.getenv("KEYSTORE_PASSWORD")
-            }
-        }
+        versionName "1.0"
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
     }
 }
 
-// Keep the single source of URLs at the repository root: urls.txt
-// It is copied into the APK assets automatically during every build.
-android.applicationVariants.all { variant ->
-    def copyUrls = tasks.register("copy${variant.name.capitalize()}Urls", Copy) {
-        from(rootProject.file("urls.txt"))
-        into(file("src/main/assets"))
-        rename { "urls.txt" }
-    }
-    variant.preBuildProvider.get().dependsOn(copyUrls)
+dependencies {
+    // Tidak ada dependency tambahan
 }

@@ -1,9 +1,18 @@
-local.properties
-.idea/
+*.iml
+.gradle
+/local.properties
+/.idea
 .DS_Store
-*.jks
-*.keystore
-
-# Local Gradle/build outputs
-.gradle/
-**/build/
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+*.apk
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+out/
+release/
